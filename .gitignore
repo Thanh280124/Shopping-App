@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+Mern-App/node_modules/
+backend-Mearn/node_modules/
+
+# Environment variables
+Mern-App/.env
+Mern-App/.env.local
+Mern-App/.env.*.local
+backend-Mearn/.env
+backend-Mearn/.env.local
+backend-Mearn/.env.*.local
+
+# Build output
+Mern-App/dist/
+backend-Mearn/dist/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
