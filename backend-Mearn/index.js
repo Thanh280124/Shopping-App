@@ -24,12 +24,12 @@ mongoose.connect(MONGO_URI)
 
 // Static file serving
 
-app.use('/upload/images', express.static(path.join(__dirname, 'upload', 'images')));
+app.use('/images', express.static('upload/images'));
 
 
 // Multer storage configuration
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, 'upload', 'images'),
+    destination: './upload/images',
     filename: (req, file, cb) => {
         cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
     }
@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        img_url: `${Mern_App_URL}/upload/images/${req.file.filename}`
+        img_url: `${Mern_App_URL}/images/${req.file.filename}`
     });
 });
 
