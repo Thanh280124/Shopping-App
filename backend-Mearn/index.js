@@ -15,7 +15,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
-const MERN_App_URL = process.env.MERN_App_URL;
+const Mern_App_URL = process.env.Mern_App_URL;
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI)
@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        img_url: `${MERN_App_URL}/images/${req.file.filename}`
+        img_url: `${Mern_App_URL}/images/${req.file.filename}`
     });
 });
 
