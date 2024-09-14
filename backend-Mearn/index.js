@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        img_url: `${Mern_App_URL}/images/${req.file.filename}`
+        img_url: `${Mern_App_URL}/upload/images/${req.file.filename}`
     });
 });
 
