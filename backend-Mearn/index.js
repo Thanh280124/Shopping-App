@@ -23,7 +23,9 @@ mongoose.connect(MONGO_URI)
     .catch(err => console.error('MongoDB connection error:', err));
 
 // Static file serving
-app.use('/images', express.static(path.join(__dirname, 'upload', 'images')));
+
+app.use('/upload/images', express.static(path.join(__dirname, 'upload', 'images')));
+
 
 // Multer storage configuration
 const storage = multer.diskStorage({
