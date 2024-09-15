@@ -13,7 +13,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
 const Mern_App_URL = process.env.Mern_App_URL;
 
