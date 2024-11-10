@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createContext, useState } from "react";
-
+import all_products from '../assets/all_products'
 
 
 export const ShopContext = createContext(null);
@@ -16,23 +16,23 @@ const getDefaultCart = () =>{
 const ShopContextProvider = (props) => {
 
   const [cartItem,setCartItem] = useState(getDefaultCart());
-  const [all_products,setALl_products] = useState([]);
+  // const [all_products,setALl_products] = useState([]);
 
-useEffect(() => {
-  fetch(`${import.meta.env.VITE_API_URL}/allproducts`).then((response) => response.json()).then((data) => setALl_products(data));
+// useEffect(() => {
+//   fetch(`${import.meta.env.VITE_API_URL}/allproducts`).then((response) => response.json()).then((data) => setALl_products(data));
 
-  if(localStorage.getItem('auth-token')){
-    fetch(`${import.meta.env.VITE_API_URL}/getcart`,{
-      method:'POST',
-      headers:{
-        Accept:'application/form-data',
-        'auth-token':`${localStorage.getItem('auth-token')}`,
-        'Content-Type':'application/json',
-      },
-      body:"",
-    }).then((res) => res.json()).then((data) => setCartItem(data));
-  }
-},[])
+//   if(localStorage.getItem('auth-token')){
+//     fetch(`${import.meta.env.VITE_API_URL}/getcart`,{
+//       method:'POST',
+//       headers:{
+//         Accept:'application/form-data',
+//         'auth-token':`${localStorage.getItem('auth-token')}`,
+//         'Content-Type':'application/json',
+//       },
+//       body:"",
+//     }).then((res) => res.json()).then((data) => setCartItem(data));
+//   }
+// },[])
 
   const addToCart = (itemId) => {
       setCartItem((prev) =>({...prev,[itemId]:prev[itemId] + 1}))
