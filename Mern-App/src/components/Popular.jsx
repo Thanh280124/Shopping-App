@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import Item from "./Item"
+import POPULAR from '../assets/popular'
 const Popular = () => {
   const [popularProducts,setPopularProducts] = useState([]);
 
@@ -13,7 +14,7 @@ const Popular = () => {
       <hr className='h-[3px] md:w-1/2 mx-auto bg-gradient-to-l from-transparent via-black to-transparent mb-16' />
 
       <div className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 '>
-        {popularProducts.map((item) =>(
+        {POPULAR.map((item) =>(
           <Item key={item.id} id ={item.id} image={item.image} name={item.name} new_price={item.new_price} old_price={item.old_price}/>
         ))}
       </div>
