@@ -24,12 +24,12 @@ mongoose.connect(MONGO_URI)
 
 // Static file serving
 
-app.use('/images', express.static('upload/images'));
+app.use('/images', express.static('uploads/images'));
 
 
 // Multer storage configuration
 const storage = multer.diskStorage({
-    destination: './upload/images',
+    destination: './uploads/images',
     filename: (req, file, cb) => {
         cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
     }

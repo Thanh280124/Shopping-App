@@ -25,9 +25,8 @@ export default function App() {
         <Route path="/cart" element ={<Cart/>}/>
         <Route path="/login" element ={<Login/>}/>  
       </Routes>
-
       <Footer/>
-      </BrowserRouter>
+     </BrowserRouter>
 
     </main>
   )
